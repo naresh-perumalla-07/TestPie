@@ -10,11 +10,12 @@ import { UserProps, WorkspaceProps } from '../types'
 
 
 interface Props {
-  user: UserProps
+  user: UserProps | null
   workspace: WorkspaceProps
 }
 
 const Header = ({ user, workspace }: Props) => {
+  if (!user) return null;
 
   return (
     <header className='grid grid-cols-5 grid-rows-1 gap-2 overflow-x-auto overflow-hidden p-2 border'>
